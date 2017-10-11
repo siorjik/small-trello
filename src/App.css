@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root, #main-wrap {
+  width: 95%;
+  margin: 0 auto;
+  height: 100%;
+  text-align: center;
+}
+
+#main-wrap {
+  background: whitesmoke;
+  padding: 25px;
+}
+
+#block-wrap .task-content {
+  border: 1px solid black;
+  width: 50%;
+  margin: 0 auto 25px;
+  padding: 10px;
+  background: bisque;
+  border-radius: 10px;
+  min-height: 50px;
+}
+
+#block-wrap .task-content .task-name {
+  margin-bottom: 30px;
+  word-wrap: break-word;
+}
+
+#block-wrap .task-content .edit, #block-wrap .task-content .del, #block-wrap .task-content .save {
+  /*float: left;*/
+  display: inline-block;
+  padding: 10px 5%;
+}
+
+#block-wrap .task-content textarea {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+
