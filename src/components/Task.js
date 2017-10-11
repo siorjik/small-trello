@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class Task extends Component {
   constructor(props) {
     super(props);
-    this.state = {task: ["Go", "stop"]}
+    this.state = {task: []}
   }
 
   updateTask(index, text) {
@@ -17,11 +17,17 @@ export default class Task extends Component {
     this.setState({task: this.state.task});
   }
 
+  addNewTask() {
+    this.state.task.push("New task");
+    this.setState({task: this.state.task});
+  }
+
   render() {
     return (
       <div id='task-wrap'>
+        <input className='add-task' type="button" value='Add new task' onClick={this.addNewTask.bind(this)}/>
         {this.state.task.map((task, index)=>{
-          return <BlockTask key={index} index={index} task={task} delTask={this.delTask.bind(this)} updateTask={this.updateTask.bind(this, index)}/>
+          return <BlockTask key={index} index={index} task={task} delTask={this.delTask.bind(this, index)} updateTask={this.updateTask.bind(this, index)}/>
         })}
       </div>
     )

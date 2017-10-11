@@ -15,6 +15,15 @@ html, body, #root, #main-wrap {
   padding: 25px;
 }
 
+#main-wrap .add-task {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid brown;
+  border-radius: 5px;
+  background: beige;
+  cursor: pointer;
+}
+
 #block-wrap .task-content {
   border: 1px solid black;
   width: 50%;
@@ -34,6 +43,7 @@ html, body, #root, #main-wrap {
   /*float: left;*/
   display: inline-block;
   padding: 10px 5%;
+  cursor: pointer;
 }
 
 #block-wrap .task-content textarea {
