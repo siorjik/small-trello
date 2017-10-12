@@ -56,7 +56,7 @@ class BlockTask extends Component {
   statusEdit() {
     return (
       <div className='task-content'>
-        <textarea ref={(textarea) => {this.textTask = textarea;}} defaultValue={this.props.task} cols="50" rows="3"></textarea>
+        <textarea ref={(textarea)=>{this.textTask = textarea;}} defaultValue={this.props.task} cols="50" rows="3"></textarea>
         <input className='save' type='button' value='Save task' onClick={this.saveBlock.bind(this)}/>
       </div>
     )

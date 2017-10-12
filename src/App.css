@@ -1,31 +1,39 @@
 * {
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
-html, body, #root, #main-wrap {
+html, body, #root {
   width: 95%;
   margin: 0 auto;
   height: 100%;
   text-align: center;
 }
 
+body {
+  background: beige;
+}
+
 #main-wrap {
   background: whitesmoke;
-  padding: 25px;
+  overflow: auto;
+  height: 100%;
 }
 
 #main-wrap .add-task {
-  margin-bottom: 20px;
+  margin: 20px auto;
   padding: 10px;
-  border: 1px solid brown;
+  /*border: 1px solid brown;*/
+  border: none;
   border-radius: 5px;
-  background: beige;
+  background: rgb(242, 220, 245);
   cursor: pointer;
+  color: white;
 }
 
 #block-wrap .task-content {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   width: 50%;
   margin: 0 auto 25px;
   padding: 10px;
@@ -40,15 +48,30 @@ html, body, #root, #main-wrap {
 }
 
 #block-wrap .task-content .edit, #block-wrap .task-content .del, #block-wrap .task-content .save {
-  /*float: left;*/
   display: inline-block;
   padding: 10px 5%;
   cursor: pointer;
+  border: none;
+}
+#block-wrap .task-content .edit {
+  color: wheat;
+  background: blue;
+}
+#block-wrap .task-content .del {
+  color: wheat;
+  background: red;
+}
+#block-wrap .task-content .save {
+  color: wheat;
+  background: green;
 }
 
 #block-wrap .task-content textarea {
   display: block;
   margin: 0 auto 10px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
 }
 
 
