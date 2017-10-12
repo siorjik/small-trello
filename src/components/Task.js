@@ -3,13 +3,13 @@ import React, {Component} from 'react';
 export default class Task extends Component {
   constructor(props) {
     super(props);
-    this.state = {task: []}
+    this.state = {task: [], newTask: false}
   }
 
   updateTask(index, text) {
     let arr = this.state.task;
     arr[index] = text;
-    this.setState({task: arr});
+    this.setState({task: arr, newTask: false});
   }
 
   delTask(index) {
@@ -19,7 +19,7 @@ export default class Task extends Component {
 
   addNewTask() {
     this.state.task.push("New task");
-    this.setState({task: this.state.task});
+    this.setState({task: this.state.task, newTask: true});
   }
 
   render() {
@@ -27,7 +27,7 @@ export default class Task extends Component {
       <div id='task-wrap'>
         <input className='add-task' type="button" value='Add new task' onClick={this.addNewTask.bind(this)}/>
         {this.state.task.map((task, index)=>{
-          return <BlockTask key={index} index={index} task={task} delTask={this.delTask.bind(this, index)} updateTask={this.updateTask.bind(this, index)}/>
+          return <BlockTask key={index} index={index} task={task} delTask={this.delTask.bind(this, index)} updateTask={this.updateTask.bind(this, index)} newTask={this.state.newTask}/>
         })}
       </div>
     )
@@ -37,7 +37,7 @@ export default class Task extends Component {
 class BlockTask extends Component {
   constructor(props) {
     super(props);
-    this.state = {edit: false}
+    this.state = {edit: this.props.newTask}
   }
 
   delBlock() {
